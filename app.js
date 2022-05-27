@@ -5,14 +5,14 @@
 // .then(data => console.log(data))
 // .catch(err => console.log(err))
 
-
 const bkl = document.querySelector("#brooklyn");
 const man = document.querySelector("#manhattan");
 const queens = document.querySelector("#queens");
 const bronx = document.querySelector("#bronx");
 const st = document.querySelector("#staten-island");
 const complaintNum = document.getElementById("number");
-const container = document.getElementById('container')
+const container = document.getElementById("container");
+
 // const input = Number(complaintNum.value);
 
 //function Brooklyn
@@ -33,21 +33,25 @@ function brooklynData() {
     .then((response) => response.json())
     .then((data) =>
       data.map((complaint, index) => {
-        let div =document.createElement('div')
-        let p1 = document.createElement('p')
-        let p2 = document.createElement('p')
-        let btn = document.createElement('button')
-        btn.textContent = 'What did the police do?'
-        p1.textContent = complaint.complaint_type
-        p2.textContent = complaint.resolution_description
-        div.appendChild(p1)
-        div.appendChild(btn)
-        div.appendChild(p2)
-        container.appendChild(div)
+        let div = document.createElement("div");
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
+        let btn = document.createElement("button");
+        btn.textContent = "What did the police do?";
+        p1.textContent = complaint.complaint_type;
+        p2.textContent = complaint.resolution_description;
+        div.appendChild(p1);
+        div.appendChild(btn);
+        div.appendChild(p2);
+        p2.style.visibility = "hidden";
+        container.appendChild(div);
+        btn.addEventListener("click", function () {
+          return (p2.textContent = complaint.resolution_description);
+        });
         console.log(
           `Brooklyn NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
-        console.log(`${complaint.resolution_description}`)
+        console.log(`${complaint.resolution_description}`);
       })
     )
 
@@ -69,10 +73,21 @@ function manhattanData() {
     .then((response) => response.json())
     .then((data) =>
       data.map((complaint, index) => {
+        let div = document.createElement("div");
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
+        let btn = document.createElement("button");
+        btn.textContent = "What did the police do?";
+        p1.textContent = complaint.complaint_type;
+        p2.textContent = complaint.resolution_description;
+        div.appendChild(p1);
+        div.appendChild(btn);
+        div.appendChild(p2);
+        container.appendChild(div);
         console.log(
           `Manhattan NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
-        console.log(`${complaint.resolution_description}`)
+        console.log(`${complaint.resolution_description}`);
       })
     )
 
@@ -93,10 +108,21 @@ function bronxData() {
     .then((response) => response.json())
     .then((data) =>
       data.map((complaint, index) => {
+        let div = document.createElement("div");
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
+        let btn = document.createElement("button");
+        btn.textContent = "What did the police do?";
+        p1.textContent = complaint.complaint_type;
+        p2.textContent = complaint.resolution_description;
+        div.appendChild(p1);
+        div.appendChild(btn);
+        div.appendChild(p2);
+        container.appendChild(div);
         console.log(
           `Bronx NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
-        console.log(`${complaint.resolution_description}`)
+        console.log(`${complaint.resolution_description}`);
       })
     )
 
@@ -117,10 +143,21 @@ function queensData() {
     .then((response) => response.json())
     .then((data) =>
       data.map((complaint, index) => {
+        let div = document.createElement("div");
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
+        let btn = document.createElement("button");
+        btn.textContent = "What did the police do?";
+        p1.textContent = complaint.complaint_type;
+        p2.textContent = complaint.resolution_description;
+        div.appendChild(p1);
+        div.appendChild(btn);
+        div.appendChild(p2);
+        container.appendChild(div);
         console.log(
           `Queens NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
-        console.log(`${complaint.resolution_description}`)
+        console.log(`${complaint.resolution_description}`);
       })
     )
 
@@ -141,11 +178,22 @@ function statenIslandData() {
     .then((response) => response.json())
     .then((data) =>
       data.map((complaint, index) => {
-        console.log(`Staten Island NYPD complaint type ${index} is ${complaint.complaint_type}`);
+        let div = document.createElement("div");
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
+        let btn = document.createElement("button");
+        btn.textContent = "What did the police do?";
+        p1.textContent = complaint.complaint_type;
+        p2.textContent = complaint.resolution_description;
+        div.appendChild(p1);
+        div.appendChild(btn);
+        div.appendChild(p2);
+        container.appendChild(div);
+        console.log(
+          `Staten Island NYPD complaint type ${index} is ${complaint.complaint_type}`
+        );
 
-        console.log(`${complaint.resolution_description}`)
-
-     
+        console.log(`${complaint.resolution_description}`);
       })
     )
 
@@ -153,4 +201,4 @@ function statenIslandData() {
 }
 st.addEventListener("click", statenIslandData);
 
-module.export
+module.export;
