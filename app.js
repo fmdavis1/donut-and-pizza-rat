@@ -1,9 +1,9 @@
-const responseData = fetch(
-  `https://data.cityofnewyork.us/resource/erm2-nwe9.json`)
+// const responseData = fetch(
+//   `https://data.cityofnewyork.us/resource/erm2-nwe9.json`)
 
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(err => console.log(err))
+// .then(response => response.json())
+// .then(data => console.log(data))
+// .catch(err => console.log(err))
 
 
 const bkl = document.querySelector("#brooklyn");
@@ -12,7 +12,7 @@ const queens = document.querySelector("#queens");
 const bronx = document.querySelector("#bronx");
 const st = document.querySelector("#staten-island");
 const complaintNum = document.getElementById("number");
-
+const container = document.getElementById('container')
 // const input = Number(complaintNum.value);
 
 //function Brooklyn
@@ -33,6 +33,17 @@ function brooklynData() {
     .then((response) => response.json())
     .then((data) =>
       data.map((complaint, index) => {
+        let div =document.createElement('div')
+        let p1 = document.createElement('p')
+        let p2 = document.createElement('p')
+        let btn = document.createElement('button')
+        btn.textContent = 'What did the police do?'
+        p1.textContent = complaint.complaint_type
+        p2.textContent = complaint.resolution_description
+        div.appendChild(p1)
+        div.appendChild(btn)
+        div.appendChild(p2)
+        container.appendChild(div)
         console.log(
           `Brooklyn NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
