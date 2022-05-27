@@ -1,9 +1,10 @@
 const responseData = fetch(
-  `https://data.cityofnewyork.us/resource/erm2-nwe9.json`
-);
-// .then(response => response.json())
-// .then(data => console.log(data))
-// .catch(err => console.log(err))
+  `https://data.cityofnewyork.us/resource/erm2-nwe9.json`)
+
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(err => console.log(err))
+
 
 const bkl = document.querySelector("#brooklyn");
 const man = document.querySelector("#manhattan");
@@ -35,6 +36,7 @@ function brooklynData() {
         console.log(
           `Brooklyn NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
+        console.log(`${complaint.resolution_description}`)
       })
     )
 
@@ -59,6 +61,7 @@ function manhattanData() {
         console.log(
           `Manhattan NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
+        console.log(`${complaint.resolution_description}`)
       })
     )
 
@@ -82,6 +85,7 @@ function bronxData() {
         console.log(
           `Bronx NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
+        console.log(`${complaint.resolution_description}`)
       })
     )
 
@@ -105,6 +109,7 @@ function queensData() {
         console.log(
           `Queens NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
+        console.log(`${complaint.resolution_description}`)
       })
     )
 
@@ -125,12 +130,16 @@ function statenIslandData() {
     .then((response) => response.json())
     .then((data) =>
       data.map((complaint, index) => {
-        console.log(
-          `Staten Island NYPD complaint type ${index} is ${complaint.complaint_type}`
-        );
+        console.log(`Staten Island NYPD complaint type ${index} is ${complaint.complaint_type}`);
+
+        console.log(`${complaint.resolution_description}`)
+
+     
       })
     )
 
     .catch((err) => console.log(err));
 }
 st.addEventListener("click", statenIslandData);
+
+module.export
