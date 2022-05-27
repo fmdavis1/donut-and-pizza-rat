@@ -11,7 +11,8 @@ const queens = document.querySelector("#queens");
 const bronx = document.querySelector("#bronx");
 const st = document.querySelector("#staten-island");
 const complaintNum = document.getElementById("number");
-const input = Number(complaintNum.value);
+
+// const input = Number(complaintNum.value);
 
 //function Brooklyn
 //  function brooklynData(){
@@ -21,8 +22,10 @@ const input = Number(complaintNum.value);
 //     .catch(err => console.log(err))
 // }
 function brooklynData() {
-  const input = Number(complaintNum.value);
-  console.log(input);
+  let input = Number(complaintNum.value);
+  if (input === Number("")) {
+    input = 10;
+  }
   fetch(
     `https://data.cityofnewyork.us/resource/erm2-nwe9.json?borough=BROOKLYN&agency=NYPD&$limit=${input}`
   )
@@ -42,7 +45,10 @@ bkl.addEventListener("click", brooklynData);
 
 //fucntion Manhattan
 function manhattanData() {
-  const input = Number(complaintNum.value);
+  let input = Number(complaintNum.value);
+  if (input === Number("")) {
+    input = 10;
+  }
   console.log(input);
   fetch(
     `https://data.cityofnewyork.us/resource/erm2-nwe9.json?borough=MANHATTAN&agency=NYPD&$limit=${input}`
@@ -62,7 +68,10 @@ man.addEventListener("click", manhattanData);
 
 //fucntion bronx
 function bronxData() {
-  const input = Number(complaintNum.value);
+  let input = Number(complaintNum.value);
+  if (input === Number("")) {
+    input = 10;
+  }
   console.log(input);
   fetch(
     `https://data.cityofnewyork.us/resource/erm2-nwe9.json?borough=BRONX&agency=NYPD&$limit=${input}`
@@ -82,7 +91,10 @@ bronx.addEventListener("click", bronxData);
 
 //fucntion queens
 function queensData() {
-  const input = Number(complaintNum.value);
+  let input = Number(complaintNum.value);
+  if (input === Number("")) {
+    input = 10;
+  }
   console.log(input);
   fetch(
     `https://data.cityofnewyork.us/resource/erm2-nwe9.json?borough=QUEENS&agency=NYPD&$limit=${input}`
@@ -102,7 +114,10 @@ queens.addEventListener("click", queensData);
 
 //fucntion Staten_island
 function statenIslandData() {
-  const input = Number(complaintNum.value);
+  let input = Number(complaintNum.value);
+  if (input === Number("")) {
+    input = 10;
+  }
   console.log(input);
   fetch(
     `https://data.cityofnewyork.us/resource/erm2-nwe9.json?borough=STATEN ISLAND&agency=NYPD&$limit=${input}`
