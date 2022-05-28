@@ -37,17 +37,24 @@ function brooklynData() {
         let p1 = document.createElement("p");
         let p2 = document.createElement("p");
         let btn = document.createElement("button");
+
         btn.textContent = "What did the police do?";
+
         p1.textContent = complaint.complaint_type;
-        p2.textContent = complaint.resolution_description;
+
         div.appendChild(p1);
         div.appendChild(btn);
-        div.appendChild(p2);
-        p2.style.visibility = "hidden";
+
         container.appendChild(div);
+        p2.classList.add("hidden");
+
         btn.addEventListener("click", function () {
-          return (p2.textContent = complaint.resolution_description);
+          div.appendChild(p2);
+          div.appendChild(p2);
+          p2.classList.toggle("hidden");
+          p2.textContent = complaint.resolution_description;
         });
+
         console.log(
           `Brooklyn NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
@@ -78,12 +85,21 @@ function manhattanData() {
         let p2 = document.createElement("p");
         let btn = document.createElement("button");
         btn.textContent = "What did the police do?";
+
         p1.textContent = complaint.complaint_type;
-        p2.textContent = complaint.resolution_description;
+
         div.appendChild(p1);
         div.appendChild(btn);
-        div.appendChild(p2);
+
         container.appendChild(div);
+        p2.classList.add("hidden");
+
+        btn.addEventListener("click", function () {
+          div.appendChild(p2);
+          div.appendChild(p2);
+          p2.classList.toggle("hidden");
+          p2.textContent = complaint.resolution_description;
+        });
         console.log(
           `Manhattan NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
@@ -114,11 +130,19 @@ function bronxData() {
         let btn = document.createElement("button");
         btn.textContent = "What did the police do?";
         p1.textContent = complaint.complaint_type;
-        p2.textContent = complaint.resolution_description;
+
         div.appendChild(p1);
         div.appendChild(btn);
-        div.appendChild(p2);
+
         container.appendChild(div);
+        p2.classList.add("hidden");
+
+        btn.addEventListener("click", function () {
+          div.appendChild(p2);
+          div.appendChild(p2);
+          p2.classList.toggle("hidden");
+          p2.textContent = complaint.resolution_description;
+        });
         console.log(
           `Bronx NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
@@ -149,11 +173,19 @@ function queensData() {
         let btn = document.createElement("button");
         btn.textContent = "What did the police do?";
         p1.textContent = complaint.complaint_type;
-        p2.textContent = complaint.resolution_description;
+
         div.appendChild(p1);
         div.appendChild(btn);
-        div.appendChild(p2);
+
         container.appendChild(div);
+        p2.classList.add("hidden");
+
+        btn.addEventListener("click", function () {
+          div.appendChild(p2);
+          div.appendChild(p2);
+          p2.classList.toggle("hidden");
+          p2.textContent = complaint.resolution_description;
+        });
         console.log(
           `Queens NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
@@ -184,11 +216,19 @@ function statenIslandData() {
         let btn = document.createElement("button");
         btn.textContent = "What did the police do?";
         p1.textContent = complaint.complaint_type;
-        p2.textContent = complaint.resolution_description;
+
         div.appendChild(p1);
         div.appendChild(btn);
-        div.appendChild(p2);
+
         container.appendChild(div);
+        p2.classList.add("hidden");
+
+        btn.addEventListener("click", function () {
+          div.appendChild(p2);
+          div.appendChild(p2);
+          p2.classList.toggle("hidden");
+          p2.textContent = complaint.resolution_description;
+        });
         console.log(
           `Staten Island NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
