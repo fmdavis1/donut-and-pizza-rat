@@ -1,9 +1,4 @@
-// const responseData = fetch(
-//   `https://data.cityofnewyork.us/resource/erm2-nwe9.json`)
 
-// .then(response => response.json())
-// .then(data => console.log(data))
-// .catch(err => console.log(err))
 
 const bkl = document.querySelector("#brooklyn");
 const man = document.querySelector("#manhattan");
@@ -13,15 +8,7 @@ const st = document.querySelector("#staten-island");
 const complaintNum = document.getElementById("number");
 const container = document.getElementById("container");
 
-// const input = Number(complaintNum.value);
 
-//function Brooklyn
-//  function brooklynData(){
-//     fetch(`https://data.cityofnewyork.us/resource/erm2-nwe9.json?borough=BROOKLYN&agency=NYPD&$select=complaint_type&$limit=10`)
-//     .then(response => response.json())
-// .then(data => console.log(data))
-//     .catch(err => console.log(err))
-// }
 function brooklynData() {
   let input = Number(complaintNum.value);
   if (input === Number("")) {
