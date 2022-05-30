@@ -7,9 +7,20 @@ const bronx = document.querySelector("#bronx");
 const st = document.querySelector("#staten-island");
 const complaintNum = document.getElementById("number");
 const container = document.getElementById("container");
+const reset = document.getElementById("reset")
 
+function resetComplaints(){
+  let complaintsElement = document.querySelector("#container");
+  while(complaintsElement.firstChild){
+     complaintsElement.removeChild(complaintsElement.firstChild)    
+     }
+  }
 
 function brooklynData() {
+
+  
+
+  
   let input = Number(complaintNum.value);
   if (input === Number("")) {
     input = 10;
@@ -40,7 +51,11 @@ function brooklynData() {
           div.appendChild(p2);
           p2.classList.toggle("hidden");
           p2.textContent = complaint.resolution_description;
-        });
+          
+        })
+        // .then((input) => input.texContext = Number(""))
+        // console.log(input)
+        
 
         console.log(
           `Brooklyn NYPD complaint type ${index} is ${complaint.complaint_type}`
@@ -50,6 +65,8 @@ function brooklynData() {
     )
 
     .catch((err) => console.log(err));
+    complaintNum.value = '';
+      
 }
 
 bkl.addEventListener("click", brooklynData);
@@ -95,6 +112,7 @@ function manhattanData() {
     )
 
     .catch((err) => console.log(err));
+    complaintNum.value = '';
 }
 man.addEventListener("click", manhattanData);
 
@@ -138,6 +156,7 @@ function bronxData() {
     )
 
     .catch((err) => console.log(err));
+    complaintNum.value = '';
 }
 bronx.addEventListener("click", bronxData);
 
@@ -181,10 +200,11 @@ function queensData() {
     )
 
     .catch((err) => console.log(err));
+    complaintNum.value = '';
 }
 queens.addEventListener("click", queensData);
 
-//fucntion Staten_island
+//fucntion Staten_Island
 function statenIslandData() {
   let input = Number(complaintNum.value);
   if (input === Number("")) {
@@ -225,7 +245,11 @@ function statenIslandData() {
     )
 
     .catch((err) => console.log(err));
+    complaintNum.value = '';
+
+    
 }
 st.addEventListener("click", statenIslandData);
 
-module.export;
+reset.addEventListener('click',resetComplaints)
+
