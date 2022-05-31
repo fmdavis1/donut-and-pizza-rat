@@ -24,8 +24,10 @@
   .inline2 > button:hover {
     background-color: rgb(195, 131, 67);
   }
+
+
   #container > div > button {
-    display: inline-block;
+    /* display: inline-block; */
     background-color: brown;
     color: white;
     transition: 0.1s;
