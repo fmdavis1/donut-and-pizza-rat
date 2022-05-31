@@ -6,21 +6,20 @@ const queens = document.querySelector("#queens");
 const bronx = document.querySelector("#bronx");
 const st = document.querySelector("#staten-island");
 const complaintNum = document.getElementById("number");
-const container = document.getElementById("container");
-const reset = document.getElementById("reset")
+let complaintsElement = document.querySelector("#container");
+
 
 function resetComplaints(){
-  let complaintsElement = document.querySelector("#container");
   while(complaintsElement.firstChild){
      complaintsElement.removeChild(complaintsElement.firstChild)    
      }
   }
 
 function brooklynData() {
+  if(complaintsElement.firstChild !== null){
+    resetComplaints()
+  }
 
-  
-
-  
   let input = Number(complaintNum.value);
   if (input === Number("")) {
     input = 10;
@@ -51,12 +50,8 @@ function brooklynData() {
           div.appendChild(p2);
           p2.classList.toggle("hidden");
           p2.textContent = complaint.resolution_description;
-          
         })
-        // .then((input) => input.texContext = Number(""))
-        // console.log(input)
         
-
         console.log(
           `Brooklyn NYPD complaint type ${index} is ${complaint.complaint_type}`
         );
@@ -73,11 +68,15 @@ bkl.addEventListener("click", brooklynData);
 
 //fucntion Manhattan
 function manhattanData() {
+
+  if(complaintsElement.firstChild !== null){
+    resetComplaints()
+  }
   let input = Number(complaintNum.value);
   if (input === Number("")) {
     input = 10;
   }
-  console.log(input);
+  console.log(input)
   fetch(
     `https://data.cityofnewyork.us/resource/erm2-nwe9.json?borough=MANHATTAN&agency=NYPD&$limit=${input}`
   )
@@ -118,6 +117,9 @@ man.addEventListener("click", manhattanData);
 
 //fucntion bronx
 function bronxData() {
+  if(complaintsElement.firstChild !== null){
+    resetComplaints()
+  }
   let input = Number(complaintNum.value);
   if (input === Number("")) {
     input = 10;
@@ -162,6 +164,9 @@ bronx.addEventListener("click", bronxData);
 
 //fucntion queens
 function queensData() {
+  if(complaintsElement.firstChild !== null){
+    resetComplaints()
+  }
   let input = Number(complaintNum.value);
   if (input === Number("")) {
     input = 10;
@@ -206,6 +211,9 @@ queens.addEventListener("click", queensData);
 
 //fucntion Staten_Island
 function statenIslandData() {
+  if(complaintsElement.firstChild !== null){
+    resetComplaints()
+  }
   let input = Number(complaintNum.value);
   if (input === Number("")) {
     input = 10;
@@ -250,6 +258,3 @@ function statenIslandData() {
     
 }
 st.addEventListener("click", statenIslandData);
-
-reset.addEventListener('click',resetComplaints)
-
