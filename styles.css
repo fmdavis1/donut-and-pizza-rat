@@ -27,7 +27,6 @@
 
 
   #container > div > button {
-    /* display: inline-block; */
     background-color: brown;
     color: white;
     transition: 0.1s;
